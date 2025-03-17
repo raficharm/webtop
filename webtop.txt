@@ -1,0 +1,15 @@
+Alpine Linux with Xfce
+
+
+docker run -d \
+     --name=webtop \
+     -e PUID=$(id -u) \
+     -e PGID=$(id -g) \
+     -e TZ=America/New_York \
+     -e DOCKER_MODS="linuxserver/mods:universal-kde" \
+     -p 3000:3000 \
+     -v ~/webtop/config:/config \
+     --shm-size="2gb" \
+     --restart unless-stopped \
+     lscr.io/linuxserver/webtop:latest
+
